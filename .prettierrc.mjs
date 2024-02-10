@@ -5,8 +5,15 @@ export default {
   singleQuote: false,
   jsxSingleQuote: false,
   trailingComma: "es5",
-  jsxBracketSameLine: true,
   useTabs: false,
   tabWidth: 2,
   plugins: ["prettier-plugin-astro"],
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
 };
