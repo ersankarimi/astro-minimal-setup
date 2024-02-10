@@ -1,0 +1,14 @@
+{
+  "name": "AstroMinimalSetup",
+  "short_name": "AstroMinimalSetup",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "Minimal setup for Astro",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    }
+  ]
+}
