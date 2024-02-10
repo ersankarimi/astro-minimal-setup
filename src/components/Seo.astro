@@ -1,0 +1,55 @@
+---
+const defaultValues = {
+  href: "https://example.com/",
+  ogImage: "https://example.com/og-image.jpg",
+  title:
+    "Title | This is a title of the website. It will appear in search results and when the page is shared on social media.",
+  keywords:
+    "keyword1, keyword2, keyword3, keyword4, keyword5, keyword6, keyword7, keyword8, keyword9, keyword10",
+  description:
+    "This is a description of the website. It will appear in search results and when the page is shared on social media.",
+};
+
+export type SeoProps = {
+  title?: string;
+  href?: string;
+  keywords?: string;
+  description?: string;
+  ogImage?: string;
+};
+
+interface Props extends SeoProps {}
+
+const { title, href, keywords, description, ogImage } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="description" content={description || defaultValues.description} />
+<title>{title}</title>
+<meta name="generator" content={Astro.generator} />
+<link rel="manifest" href="/manifest.json" />
+<meta name="robots" content="index,follow" />
+<meta name="copyright" content="Ersan Karimi" />
+<meta name="author" content="Ersan Karimi" />
+<meta name="language" content="id,in" />
+<meta name="keywords" content={keywords || defaultValues.keywords} />
+<link rel="canonical" href={href || defaultValues.href} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={href || defaultValues.href} />
+<meta property="og:title" content={title || defaultValues.title} />
+<meta property={description || defaultValues.description} />
+<meta property="og:image" content={ogImage || defaultValues.ogImage} />
+
+<!-- Twitter Meta Tags -->
+<meta property="twitter:card" content={ogImage || defaultValues.ogImage} />
+<meta property="twitter:url" content={href || defaultValues.href} />
+<meta property="twitter:title" content={title || defaultValues.title} />
+<meta
+  property="twitter:description"
+  content={description || defaultValues.description}
+/>
+<meta property="twitter:image" content={ogImage || defaultValues.ogImage} />
