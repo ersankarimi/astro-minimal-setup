@@ -1,4 +1,6 @@
 ---
+// Uncomment the following line to enable Astro's view transitions.
+// import { ViewTransitions } from "astro:transitions";
 import "@/styles/globals.css";
 import Seo, { type SeoProps } from "@/components/Seo.astro";
 interface Props extends SeoProps {}
@@ -10,6 +12,9 @@ const props = Astro.props;
 <html lang="en">
   <head>
     <Seo {...props} />
+
+    <!-- Uncomment the following line to enable Astro's view transitions. -->
+    <!-- <ViewTransitions /> -->
   </head>
   <body>
     <slot />
